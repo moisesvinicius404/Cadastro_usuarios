@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de Usuários</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 24px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      color: white;
+      background: #4a90e2;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #357abd;
+    }
+
+    .delete-all {
+      background: #e74c3c;
+    }
+
+    .delete-all:hover {
+      background: #c0392b;
+    }
+
+    .user-list {
+      margin-top: 30px;
+    }
+
+    .user-card {
+      background: #f0f0f0;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .user-card span {
+      display: block;
+    }
+
+    .delete-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      color: #e74c3c;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .empty-message {
+      text-align: center;
+      color: #888;
+      margin-top: 30px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastro de Usuários</h1>
+
+    <form id="form-user">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" required>
+
+      <label for="sobrenome">Sobrenome</label>
+      <input type="text" id="sobrenome" required>
+
+      <label for="idade">Idade</label>
+      <input type="number" id="idade" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <div class="buttons">
+        <button type="submit" id="btnSalvar">Cadastrar</button>
+        <button type="button" class="delete-all" id="apagar-todos">Apagar Todos</button>
+      </div>
+    </form>
+
+    <div class="user-list" id="lista-usuarios">
+      <p class="empty-message">Nenhum usuário cadastrado ainda.</p>
+    </div>
+  </div><!--Div container-->
+
+<script src="script.js"></script>
+</body>
+</html>
